@@ -1,0 +1,19 @@
+Convolution is a mathematical operation used to express the relation between input and output of an LTI system. In linear systems, convolution is used to describe the relationship between the three signals of interest: the input signal, the impulse response, and the output signal. In linear convolution length of the output sequence is, length (y(n)) = length (x(n)) + length (h(n)) – 1.
+
+Aim: Linear Convolution of Signals
+x = [2, 3, 4, 5] and h = [2, 4]
+
+Code:
+x = [2, 3, 4, 5]
+h = [2, 4]
+y = zeros(5)
+for n = 1 : 6
+    for k = 1 : 4
+        if (n - k > 0 & n - k < 3)
+            y(n - 1) = y(n - 1) + x(k) * h(n - k)
+        end
+    end
+end
+stem(y)
+
+Performed by: Prachi Vakshi
